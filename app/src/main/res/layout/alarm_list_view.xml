@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/alarm_txt"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_weight="8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="30sp"></TextView>
+
+        <Switch
+            android:id="@+id/alarm_sw"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"></Switch>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_mon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Mon"></TextView>
+        <TextView
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_tue"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Tue"></TextView>
+        <TextView
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_Wed"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Wed"></TextView>
+        <TextView
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_Thur"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Thur"></TextView>
+        <TextView
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_Fri"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Fri"></TextView>
+        <TextView
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_Sat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Sat"></TextView>
+        <TextView
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_sun"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Sun"></TextView>
+
+
+    </LinearLayout>
+
+</LinearLayout>
