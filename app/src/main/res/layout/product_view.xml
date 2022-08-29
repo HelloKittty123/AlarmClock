@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#211D44"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/ic_con"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_flag"
+        app:tint="@android:color/white"></ImageView>
+
+    <TextView
+        android:id="@+id/product_id"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:textColor="@color/white"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:id="@+id/product_buff"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"></TextView>
+
+    <TextView
+        android:id="@+id/product_timer"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:textColor="@color/white"
+        android:textSize="20sp"></TextView>
+
+</LinearLayout>

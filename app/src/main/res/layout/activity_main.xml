@@ -4,30 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <ListView
-        android:id="@+id/alarm_list"
-        android:layout_weight="9"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-        <Button
-            android:id="@+id/alarm_add"
-            android:layout_marginRight="80dp"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:text="Add">
-        </Button>
-        <Button
-            android:id="@+id/alarm_cancel"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:text="Cancel">
-        </Button>
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/nav_bar_background"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/alarm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/circle_background_white"
+            android:src="@drawable/ic_baseline_access_alarm_24" />
+
+        <ImageButton
+            android:id="@+id/stopwatch_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/circle_background_white"
+            android:src="@drawable/ic_baseline_timelapse_24"
+
+            />
+
+        <ImageButton
+            android:id="@+id/timer_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:background="@drawable/circle_background_white"
+            android:src="@drawable/ic_baseline_timer_24" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" />
 </LinearLayout>
