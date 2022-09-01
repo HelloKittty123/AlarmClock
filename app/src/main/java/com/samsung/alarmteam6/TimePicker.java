@@ -1,8 +1,5 @@
 package com.samsung.alarmteam6;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-
 import android.animation.ObjectAnimator;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -21,7 +18,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.samsung.alarmteam6.services.Music;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 public class TimePicker extends AppCompatActivity {
     private int hour, minute, second;
@@ -107,6 +105,8 @@ public class TimePicker extends AppCompatActivity {
                     @Override
                     public void onFinish() {
                         timeView.setText("done!");
+                        mediaPlayer.start();
+                        sendNotification();
                         animator.end();
 
                     }
@@ -118,6 +118,8 @@ public class TimePicker extends AppCompatActivity {
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                animator.cancel();
+                countDownTimer.cancel();
                 finish();
             }
         });
@@ -159,7 +161,7 @@ public class TimePicker extends AppCompatActivity {
         PendingIntent notifyIntent = PendingIntent.getActivity(this,
                 0,
                 intent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_IMMUTABLE);
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("My notification")
                 .setContentText("Hello!")
@@ -173,7 +175,7 @@ public class TimePicker extends AppCompatActivity {
         NotificationCompat.Builder notifyBuilder = getNotifyBuilder();
 
         Intent intent = new Intent(NOTIFICATION_ACTION);
-        PendingIntent updateIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent updateIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         // Create button action
         notifyBuilder.addAction(R.drawable.ic_launcher_background, "Cancel", updateIntent);
 

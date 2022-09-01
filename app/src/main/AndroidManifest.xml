@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.samsung.alarmteam6">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,19 +14,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AlarmTeam6"
+        android:theme="@style/Theme.AlarmTeam6.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".EditAlarm"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".CreateAlarm"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".TimePicker"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.AlarmTeam6.NoActionBar">
@@ -33,6 +40,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Chạy ngầm -->
+        <receiver android:name=".AlarmReceiver" />
+
+        <service
+            android:name=".services.Music"
+            android:enabled="true" />
     </application>
 
 </manifest>

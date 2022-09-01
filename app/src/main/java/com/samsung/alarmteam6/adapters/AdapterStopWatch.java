@@ -17,7 +17,7 @@ public class AdapterStopWatch extends BaseAdapter {
     private LayoutInflater inflater;
     TextView view_ID, view_buff, view_timer;
 
-    public AdapterStopWatch(Context context , ArrayList<Product> list) {
+    public AdapterStopWatch(Context context, ArrayList<Product> list) {
         this.listview = list;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -41,17 +41,17 @@ public class AdapterStopWatch extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (view == null) {
-            view = View.inflate( viewGroup.getContext(), R.layout.product_view, null);
+            view = View.inflate(viewGroup.getContext(), R.layout.product_view, null);
         }
         Product product = listview.get(i);
         System.out.println(product.ProductID);
         System.out.println(product.buff);
         System.out.println(product.timer);
         view_ID = view.findViewById(R.id.product_id);
-        view_buff= view.findViewById(R.id.product_buff);
+        view_buff = view.findViewById(R.id.product_buff);
         view_timer = view.findViewById(R.id.product_timer);
-        view_ID.setText(Integer.toString(product.getProductID())+"  ");
-        view_buff.setText(product.getBuff()+"  ");
+        view_ID.setText(Integer.toString(product.getProductID()) + "  ");
+        view_buff.setText(product.getBuff() + "  ");
         view_timer.setText(product.getTimer());
 
         return view;

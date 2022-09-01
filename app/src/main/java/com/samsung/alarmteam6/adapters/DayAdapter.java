@@ -53,14 +53,10 @@ public class DayAdapter extends RecyclerView.Adapter<DayAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtDay.setText(mList[position].substring(0, 3));
         if (mChecked[position]) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                holder.txtDay.setTextColor(mContext.getColor(R.color.P_black));
-            }
+            holder.txtDay.setTextColor(mContext.getColor(R.color.c_background));
             holder.txtDay.setBackground(mContext.getDrawable(R.drawable.circle_background_selected));
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                holder.txtDay.setTextColor(mContext.getColor(R.color.P_white));
-            }
+            holder.txtDay.setTextColor(mContext.getColor(R.color.P_blue));
             holder.txtDay.setBackground(mContext.getDrawable(R.drawable.circle_background));
         }
     }
@@ -101,15 +97,11 @@ public class DayAdapter extends RecyclerView.Adapter<DayAdapter.ViewHolder> {
                 public void onClick(View view) {
                     int i = getAdapterPosition();
                     if (mChecked[i]) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            txtDay.setTextColor(mContext.getColor(R.color.P_white));
-                        }
+                        txtDay.setTextColor(mContext.getColor(R.color.P_blue));
                         txtDay.setBackground(mContext.getDrawable(R.drawable.circle_background));
                         mChecked[i] = !mChecked[i];
                     } else {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            txtDay.setTextColor(mContext.getColor(R.color.P_black));
-                        }
+                        txtDay.setTextColor(mContext.getColor(R.color.c_background));
                         txtDay.setBackground(mContext.getDrawable(R.drawable.circle_background_selected));
                         mChecked[i] = !mChecked[i];
                     }

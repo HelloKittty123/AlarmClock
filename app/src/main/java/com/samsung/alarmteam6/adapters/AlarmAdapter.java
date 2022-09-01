@@ -7,7 +7,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +15,9 @@ import android.widget.BaseAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.samsung.alarmteam6.AlarmFragment;
 import com.samsung.alarmteam6.AlarmReceiver;
 import com.samsung.alarmteam6.EventHandler;
-
 import com.samsung.alarmteam6.R;
 import com.samsung.alarmteam6.database.AlarmOpenHelper;
 import com.samsung.alarmteam6.database.WeekOpenHelper;
@@ -38,10 +37,10 @@ public class AlarmAdapter extends BaseAdapter {
     PendingIntent pendingIntent;
     AlarmManager alarmManager;
 
-    public AlarmAdapter(Context context, ArrayList<Alarm> alarms) {
+    public AlarmAdapter(Context context, ArrayList<Alarm> alarms, AlarmFragment fragment) {
         mContext = context;
         mList = alarms;
-        mHandler = (EventHandler) context;
+        mHandler = fragment;
         alarmOpenHelper = new AlarmOpenHelper(context);
         weekOpenHelper = new WeekOpenHelper(context);
         mCalendar = Calendar.getInstance();
@@ -139,6 +138,7 @@ public class AlarmAdapter extends BaseAdapter {
             newView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Log.i("MANHTINH","onClick");
                     mHandler.onClick(position);
                 }
             });
@@ -157,6 +157,8 @@ public class AlarmAdapter extends BaseAdapter {
                     if (!swAlarm.isChecked()) {
                         intent.putExtra("extra", "off");
                         alarm.setStatus(0);
+                        pendingIntent = PendingIntent.getBroadcast(
+                                mContext, alarm.getId(), intent, PendingIntent.FLAG_IMMUTABLE);
                         alarmManager.cancel(pendingIntent);
                         //                    mContext.sendBroadcast(intent);
                     } else {

@@ -7,7 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="P_black">#222222</color>
+    <color name="P_black">#0C0D0E</color>
     <color name="P_white">#E3E7ED</color>
     <color name="P_gray">#BAC2D3</color>
     <color name="P_blue">#0036F0</color>
@@ -15,4 +15,9 @@
     <color name="P_light_blue">#0BAEE3</color>
     <color name="P_sightly_blue">#00FAF6</color>
     <color name="colorPrimaryDark">#211D44</color>
+    <color name="c_background">#E1E6EA</color>
+    <color name="c_background_60">#99E1E6EA</color>
+    <color name="c_background_10">#1AE1E6EA</color>
+    <color name="c_background_second">#0C0D0E</color>
+    <color name="c_transparent_background">#99FFFFFF</color>
 </resources>

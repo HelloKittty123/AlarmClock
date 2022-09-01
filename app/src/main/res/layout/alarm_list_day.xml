@@ -14,5 +14,5 @@
         android:paddingTop="8dp"
         android:text="Mon"
         android:textAlignment="center"
-        android:textColor="@color/P_gray" />
+        android:textColor="@color/P_blue" />
 </LinearLayout>

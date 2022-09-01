@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/c_background"
     android:orientation="vertical"
     android:paddingTop="10dp"
     tools:context=".EditAlarm">
@@ -19,8 +19,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|left"
             android:layout_weight="1"
-            android:background="@color/black"
-            android:src="@drawable/ic_baseline_close_24" />
+            android:background="@color/c_background"
+            android:src="@drawable/ic_baseline_close_24"
+            app:tint="@color/P_black"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,7 +31,7 @@
             android:layout_weight="6"
             android:text="Edit an alarm"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/P_black"
             android:textSize="24sp" />
 
         <ImageButton
@@ -38,8 +40,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"
             android:layout_weight="1"
-            android:background="@color/black"
-            android:src="@drawable/ic_baseline_check_24" />
+            android:background="@color/c_background"
+            android:src="@drawable/ic_baseline_check_24"
+            app:tint="@color/P_black" />
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +59,7 @@
             android:paddingStart="20dp"
             android:text="Repeat"
             android:textAlignment="textStart"
-            android:textColor="@color/white"
+            android:textColor="@color/P_black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -66,6 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center|right"
+            android:layout_gravity="center_vertical"
             android:paddingEnd="10dp">
 
             <TextView
@@ -73,20 +77,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Once"
-                android:textColor="@color/P_gray" />
+                android:textColor="@color/P_blue" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/black"
-                android:src="@drawable/ic_baseline_chevron_right_24" />
+                android:background="@color/c_background"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                app:tint="@color/P_blue" />
         </LinearLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/edit_day_list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="93dp"
         android:layout_gravity="center"
         android:paddingStart="40dp"
         android:paddingTop="30dp"
@@ -104,13 +109,14 @@
             android:id="@+id/edit_text_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/P_black"
             android:layout_gravity="center"
             android:layout_marginTop="40dp" />
 
         <com.samsung.alarmteam6.CircleAlarmTimerView
             android:id="@+id/edit_time_picker"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="451dp" />
     </LinearLayout>
 
 </LinearLayout>

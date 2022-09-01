@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#211D44"
+    android:background="@color/c_background"
     android:orientation="horizontal"
     android:padding="20dp">
 
@@ -11,8 +11,7 @@
         android:id="@+id/ic_con"
         android:layout_width="30dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_flag"
-        app:tint="@android:color/white"></ImageView>
+        android:src="@drawable/ic_baseline_outlined_flag_24"></ImageView>
 
     <TextView
         android:id="@+id/product_id"
@@ -20,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="left"
-        android:textColor="@color/white"
+        android:textColor="@color/P_black"
         android:textSize="20sp"></TextView>
 
     <TextView
@@ -29,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/P_black"
         android:textSize="20sp"></TextView>
 
     <TextView
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="right"
-        android:textColor="@color/white"
+        android:textColor="@color/P_black"
         android:textSize="20sp"></TextView>
 
 </LinearLayout>

@@ -28,7 +28,7 @@ public class CircleAlarmTimerView extends View {
     private static final float DEFAULT_NUMBER_SIZE = 10;
     private static final float DEFAULT_LINE_WIDTH = 0.5f;
     private static final float DEFAULT_CIRCLE_BUTTON_RADIUS = 15;
-    private static final float DEFAULT_CIRCLE_STROKE_WIDTH = 1;
+    private static final float DEFAULT_CIRCLE_STROKE_WIDTH = 0.5F;
     private static final float DEFAULT_TIMER_NUMBER_SIZE = 38;
     private static final float DEFAULT_TIMER_TEXT_SIZE = 18;
 
@@ -36,9 +36,9 @@ public class CircleAlarmTimerView extends View {
     private static final int DEFAULT_CIRCLE_COLOR = /*0xFFE9E2D9*/ 0x0BAEE3;
     private static final int DEFAULT_CIRCLE_BUTTON_COLOR = 0xFFFFFFFF;
     private static final int DEFAULT_LINE_COLOR = 0xFF00D9F6;
-    private static final int DEFAULT_HIGHLIGHT_LINE_COLOR = 0xFF68C5D7;
+    private static final int DEFAULT_HIGHLIGHT_LINE_COLOR = 0xFF565358;
     private static final int DEFAULT_NUMBER_COLOR = 0xFF181318;
-    private static final int DEFAULT_TIMER_NUMBER_COLOR = 0xFFFFFFFF;
+    private static final int DEFAULT_TIMER_NUMBER_COLOR = 0xFF0C0D0E;
     private static final int DEFAULT_TIMER_COLON_COLOR = 0xFFFA7777;
     private static final int DEFAULT_TIMER_TEXT_COLOR = 0x99F0F9FF;
 
@@ -343,12 +343,6 @@ public class CircleAlarmTimerView extends View {
 
     // Whether the down event inside circle button
     private boolean mInCircleButton1(float x, float y) {
-        float r = mRadius - mCircleStrokeWidth / 2 - mGapBetweenCircleAndLine;
-        float x2 = (float) (mCx + r * Math.sin(mCurrentRadian1));
-        float y2 = (float) (mCy - r * Math.cos(mCurrentRadian1));
-        if (Math.sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2)) < mCircleButtonRadius) {
-            return true;
-        }
         return false;
     }
 

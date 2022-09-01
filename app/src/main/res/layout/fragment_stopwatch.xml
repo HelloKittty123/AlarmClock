@@ -7,23 +7,13 @@
     tools:context=".StopwatchFragment">
     android:background="#211D44">
 
-    <ImageButton
-        android:id="@+id/btnStart"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/bgbtngreen"
-        android:src="@drawable/ic_start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.803" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,27 +23,56 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255">
 
-        <NumberPicker
+        <NumberPicker xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/hour_picker"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/pickerleft"
+            android:layout_weight="1"
+            android:selectionDividerHeight="0dp"
             android:theme="@style/NumberPickerText"></NumberPicker>
 
-        <NumberPicker
+        <NumberPicker xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/minute_picker"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:background="#48B9EC"
+            android:layout_weight="1"
+            android:background="@drawable/minute_picker_background"
+            android:selectionDividerHeight="0dp"
             android:theme="@style/NumberPickerText"></NumberPicker>
 
-        <NumberPicker
+        <NumberPicker xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/second_picker"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/pickerright"
+            android:layout_weight="1"
+            android:background="@drawable/minute_picker_background"
+            android:selectionDividerHeight="0dp"
             android:theme="@style/NumberPickerText"></NumberPicker>
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/transparent_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

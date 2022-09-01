@@ -85,7 +85,7 @@ public class Music extends Service {
         PendingIntent notifyIntent = PendingIntent.getActivity(this,
                 0,
                 intent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_IMMUTABLE);
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("My notification")
                 .setContentText("Hello!")
@@ -99,7 +99,7 @@ public class Music extends Service {
         NotificationCompat.Builder notifyBuilder = getNotifyBuilder();
 
         Intent intent = new Intent(NOTIFICATION_ACTION);
-        PendingIntent updateIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent updateIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         // Create button action
         notifyBuilder.addAction(R.drawable.ic_launcher_background, "Cancel", updateIntent);
 

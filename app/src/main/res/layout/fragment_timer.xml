@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#211D44"
     android:orientation="vertical"
-    tools:context=".StopWatch">
+    tools:context=".TimerFragment">
+    android:background="#211D44">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1">
 
         <ImageView
-            android:id="@+id/bgcricle"
+            android:id="@+id/bgcricleTimer"
             android:layout_width="wrap_content"
             android:layout_height="250dp"
             android:src="@drawable/bgcircle"
@@ -24,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <ImageView
-            android:id="@+id/icanchor"
+            android:id="@+id/icanchorTimer"
             android:layout_width="286dp"
             android:layout_height="298dp"
             android:src="@drawable/icanchor"
@@ -32,7 +36,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/bgcricle"
+            app:layout_constraintTop_toTopOf="@+id/bgcricleTimer"
             app:layout_constraintVertical_bias="1.0"></ImageView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -43,70 +47,82 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
-        android:textColor="#FFF"
-        android:textSize="50sp"></Chronometer>
+        android:textColor="@color/P_black"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+        app:layout_constraintVertical_bias="0"></Chronometer>
 
     <ListView
         android:id="@+id/list_time"
         android:layout_width="wrap_content"
-        android:layout_height="173dp"></ListView>
+        android:layout_height="270dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerHere"
+        app:layout_constraintVertical_bias="0"></ListView>
+
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_height="90dp"
+        android:background="@drawable/transparent_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
 
-        <ImageButton
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnList"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/bgbtngreen"
-            android:src="@drawable/ic_list"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_flag_24"
+            app:borderWidth="0dp" />
 
-        </ImageButton>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnStopTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_stop_24"
+            app:borderWidth="0dp" />
 
-        <ImageButton
-            android:id="@+id/btnStop"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btnred"
-            android:src="@drawable/ic_stop"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnPauseTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_pause_24"
+            app:borderWidth="0dp" />
 
-        <ImageButton
-            android:id="@+id/btnPause"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/btnred"
-            android:src="@drawable/ic_pause"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/btnStart"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/bgbtngreen"
-            android:src="@drawable/ic_start"
-            android:textAllCaps="false"
-            android:textColor="#FFF"
-            android:textSize="20sp"></ImageButton>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnStartTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_play_arrow_24"
+            app:borderWidth="0dp" />
 
     </LinearLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

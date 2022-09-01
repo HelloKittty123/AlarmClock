@@ -1,3 +1,4 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="number_picker_textsize">50sp</dimen>
 </resources>
